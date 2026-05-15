@@ -28,8 +28,8 @@ jobs:
           server: ${{ secrets.HOSTINGER_SERVER }}
           username: ${{ secrets.HOSTINGER_USERNAME }}
           password: ${{ secrets.HOSTINGER_PASSWORD }}
-          server-dir: ${{ secrets.HOSTINGER_SERVER_DIR }}
-          local-dir: dist/
+          server-dir: ${{ secrets.HOSTINGER_SERVER_DIR }}/
+          local-dir: './dist/'
           protocol: ftps
           port: 21
           timeout: 60000

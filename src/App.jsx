@@ -25,6 +25,7 @@ import resultThirteen from './assets/images/IMG_9302.jpg'
 import resultFourteen from './assets/images/IMG_9306.jpg'
 
 const aboutVideo = '/assets/videos/about-video.mov'
+const danielSectionVideo = '/assets/videos/new.mp4'
 const trainingVideos = [
   {
     title: 'Strength Coaching',
@@ -480,29 +481,20 @@ function HomePage({ setPage }) {
             <div className="absolute -inset-4 bg-gradient-to-r from-red-600/20 to-transparent rounded-[40px] blur-2xl opacity-70 group-hover:opacity-100 transition duration-700"></div>
 
             <div className="relative overflow-hidden rounded-[36px] border border-white/10">
-              <img
-                src={aboutImage}
-                alt="Daniel Myrick"
-                className="w-full h-[700px] object-cover group-hover:scale-105 transition duration-[2500ms]"
-              />
+              <video
+                src={danielSectionVideo}
+                controls
+                playsInline
+                preload="auto"
+                poster={aboutImage}
+                aria-label="About Daniel video"
+                className="w-full h-[420px] md:h-[560px] lg:h-[700px] object-cover bg-black"
+              >
+                <track kind="captions" src="/assets/videos/new.vtt" srcLang="en" label="English" default />
+                Your browser does not support the video tag.
+              </video>
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
-
-              <div className="absolute bottom-8 left-8 right-8">
-                <div className="backdrop-blur-xl bg-black/30 border border-white/10 rounded-3xl p-6">
-                  <p className="uppercase tracking-[4px] text-red-500 text-xs mb-3">
-                    Atlanta Performance Coaching
-                  </p>
-
-                  <h3 className="text-3xl font-black mb-3">
-                    Always Fit
-                  </h3>
-
-                  <p className="text-white/70 leading-relaxed">
-                    Personal coaching. In person. Science backed transformation.
-                  </p>
-                </div>
-              </div>
+              <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
             </div>
           </div>
 

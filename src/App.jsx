@@ -4,6 +4,7 @@ import heroCoachImage from './assets/images/photo-output (4) (1).jpg'
 import aboutImage from './assets/images/IMG_1692.jpg'
 import transformationOne from './assets/images/before after.jpeg'
 import transformationThree from './assets/images/IMG_0415.JPG'
+import imageeeeenew from './assets/images/imageeeeenew .jpeg'
 import transformationFour from './assets/images/C2FA53C3-EFDD-4623-AB61-6E19BA443922 (2).PNG'
 import galleryOne from './assets/images/648624B6-5595-4867-A166-F0E36611A401 (2).PNG'
 import galleryTwo from './assets/images/IMG_0342.jpg'
@@ -891,7 +892,7 @@ function HomePage({ setPage }) {
                 title: 'Body Recomposition + Slimming',
                 subtitle:
                   'Strength-focused transformation with nutrition and recovery integration.',
-                image: transformationThree,
+                image: imageeeeenew,
               },
               {
                 title: 'Core & Midsection Transformation',
@@ -899,12 +900,7 @@ function HomePage({ setPage }) {
                   'Performance-driven programming built around physiology and consistency.',
                 image: transformationFour,
               },
-              {
-                title: 'Strength-Led Progress',
-                subtitle:
-                  'A practical coaching plan built around consistency and stronger movement.',
-                image: resultOne,
-              },
+              // removed duplicate male image from Home (kept on Transformations page)
               {
                 title: 'Lifestyle Rebuild',
                 subtitle:
@@ -1498,7 +1494,7 @@ function TransformationsPage() {
       text: 'Progress built around physiology, recovery, and habits.',
     },
     {
-      image: transformationThree,
+      image: imageeeeenew,
       title: 'Strength Transformation',
       text: 'A structured path from starting point to stronger body.',
     },

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import logoImage from './assets/images/alwaysfit-logo-final.jpeg'
+import logoImage from './assets/images/alwaysfit-logo-final.jpeg?v=20260603'
 import heroCoachImage from './assets/images/photo-output (4) (1).jpg'
 import aboutImage from './assets/images/IMG_1692.jpg'
 import transformationOne from './assets/images/before after.jpeg'
@@ -494,7 +494,6 @@ function HomePage({ setPage }) {
               <video
                 src={danielSectionVideo}
                 controls
-                defaultMuted={false}
                 onLoadedMetadata={(event) => {
                   event.currentTarget.muted = false
                   event.currentTarget.volume = 1

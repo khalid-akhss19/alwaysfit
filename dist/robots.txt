@@ -1,0 +1,3 @@
+Sitemap: https://joinalwaysfit.com/sitemap.xml
+User-agent: *
+Disallow:

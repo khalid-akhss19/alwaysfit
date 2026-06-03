@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import logoImage from './assets/images/alwaysfir logo.jpg'
+import logoImage from './assets/images/alwaysfit-logo-final.jpeg'
 import heroCoachImage from './assets/images/photo-output (4) (1).jpg'
 import aboutImage from './assets/images/IMG_1692.jpg'
 import transformationOne from './assets/images/before after.jpeg'
@@ -8,12 +8,10 @@ import transformationFour from './assets/images/C2FA53C3-EFDD-4623-AB61-6E19BA44
 import galleryOne from './assets/images/648624B6-5595-4867-A166-F0E36611A401 (2).PNG'
 import galleryTwo from './assets/images/IMG_0342.jpg'
 import galleryThree from './assets/images/IMG_9364.JPG'
-import galleryFour from './assets/images/IMG_1111.jpg'
 import resultOne from './assets/images/IMG_0413.JPG'
 import resultTwo from './assets/images/AFAAD35F-1891-4CC5-8B83-0635CF6E4337.JPG'
 import resultThree from './assets/images/C4B4F7EF-502D-4D00-A265-308956F853B9.JPG'
 import resultFour from './assets/images/FA4A2053-3277-480E-A481-8688A9ED3DDA.JPG'
-import resultFive from './assets/images/IMG_6572.jpg'
 import resultSix from './assets/images/IMG_8788.jpg'
 import resultSeven from './assets/images/IMG_8927.PNG'
 import resultEight from './assets/images/IMG_8931.JPG'
@@ -26,6 +24,7 @@ import resultFourteen from './assets/images/IMG_9306.jpg'
 
 const aboutVideo = '/assets/videos/about-video.mov'
 const danielSectionVideo = '/assets/videos/new.mp4'
+const calendlyUrl = 'https://calendly.com/alwaysfit_daniel/alwaysfit'
 const trainingVideos = [
   {
     title: 'Strength Coaching',
@@ -113,12 +112,14 @@ export default function AlwaysFitPreview() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <button
-              onClick={() => setPage('contact')}
+            <a
+              href={calendlyUrl}
+              target="_blank"
+              rel="noreferrer"
               className="hidden lg:inline-flex bg-red-600 hover:bg-red-700 transition px-4 xl:px-6 py-3 rounded-full text-sm font-semibold shadow-2xl shadow-red-900/40"
             >
               Book Free Assessment
-            </button>
+            </a>
 
             <button
               type="button"
@@ -174,12 +175,14 @@ export default function AlwaysFitPreview() {
               ))}
             </nav>
 
-            <button
-              onClick={() => setPage('contact')}
+            <a
+              href={calendlyUrl}
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex w-full items-center justify-center bg-red-600 hover:bg-red-700 transition px-6 py-3 rounded-full text-sm font-semibold shadow-2xl shadow-red-900/40"
             >
               Book Free Assessment
-            </button>
+            </a>
           </div>
         </div>
       </header>
@@ -226,7 +229,6 @@ export default function AlwaysFitPreview() {
               Contact
             </h4>
             <div className="space-y-3 text-white/70">
-              <p>470-218-3360</p>
               <p>alwaysfitdaniel@gmail.com</p>
               <p>Chamblee / Brookhaven Atlanta GA</p>
             </div>
@@ -342,12 +344,23 @@ function HomePage({ setPage }) {
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-5">
-                    <button
-                      onClick={() => setPage(slide.action)}
-                      className="bg-red-600 hover:bg-red-700 px-8 py-4 rounded-full font-semibold text-lg transition shadow-2xl shadow-red-900/40"
-                    >
-                      {slide.button}
-                    </button>
+                    {slide.action === 'contact' ? (
+                      <a
+                        href={calendlyUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="bg-red-600 hover:bg-red-700 px-8 py-4 rounded-full font-semibold text-lg text-center transition shadow-2xl shadow-red-900/40"
+                      >
+                        {slide.button}
+                      </a>
+                    ) : (
+                      <button
+                        onClick={() => setPage(slide.action)}
+                        className="bg-red-600 hover:bg-red-700 px-8 py-4 rounded-full font-semibold text-lg transition shadow-2xl shadow-red-900/40"
+                      >
+                        {slide.button}
+                      </button>
+                    )}
 
                     <button
                       onClick={() => setPage('about')}
@@ -416,19 +429,16 @@ function HomePage({ setPage }) {
                 title: 'Hormone-Aware Programming',
                 description:
                   'Training is tailored to your hormones, life stage, and metabolism so progress feels consistent, measurable, and realistic for your body.',
-                icon: '🧬',
               },
               {
                 title: 'Strength & Conditioning Science',
                 description:
                   'Programs follow proven strength and conditioning principles with clear progression, performance tracking, and recovery planning to build lasting results.',
-                icon: '🏋️',
               },
               {
                 title: 'Nutrition & Lifestyle Coaching',
                 description:
                   'Nutrition, sleep, stress, and lifestyle coaching work with training so you build sustainable habits and maintain strong results year round.',
-                icon: '🥗',
               },
             ].map((item, index) => (
               <div
@@ -438,8 +448,8 @@ function HomePage({ setPage }) {
                 <div className="absolute top-0 right-0 w-40 h-40 bg-red-600/10 blur-3xl opacity-0 group-hover:opacity-100 transition duration-700"></div>
 
                 <div className="relative z-10">
-                  <div className="w-20 h-20 rounded-3xl bg-red-600/10 border border-red-500/20 flex items-center justify-center text-3xl text-red-500 mb-10 group-hover:bg-red-600 group-hover:text-white transition duration-500">
-                    {item.icon}
+                  <div className="w-20 h-20 rounded-3xl bg-red-600/10 border border-red-500/20 flex items-center justify-center text-2xl font-black tracking-wide text-red-500 mb-10 group-hover:bg-red-600 group-hover:text-white transition duration-500">
+                    {String(index + 1).padStart(2, '0')}
                   </div>
 
                   <div className="mb-6">
@@ -484,6 +494,11 @@ function HomePage({ setPage }) {
               <video
                 src={danielSectionVideo}
                 controls
+                defaultMuted={false}
+                onLoadedMetadata={(event) => {
+                  event.currentTarget.muted = false
+                  event.currentTarget.volume = 1
+                }}
                 playsInline
                 preload="auto"
                 poster={aboutImage}
@@ -531,12 +546,14 @@ function HomePage({ setPage }) {
                 Learn More About Daniel
               </button>
 
-              <button
-                onClick={() => setPage('contact')}
-                className="border border-white/15 hover:border-red-500 hover:bg-red-500/10 px-8 py-4 rounded-full font-semibold text-lg transition"
+              <a
+                href={calendlyUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="border border-white/15 hover:border-red-500 hover:bg-red-500/10 px-8 py-4 rounded-full text-center font-semibold text-lg transition"
               >
                 Book Assessment
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -555,19 +572,16 @@ function HomePage({ setPage }) {
                 title: 'PHYSIOLOGY',
                 description:
                   'Programming built around your hormones, recovery, and metabolic individuality.',
-                icon: '🧬',
               },
               {
                 title: 'STRENGTH',
                 description:
                   'Periodized training rooted in NSCA strength & conditioning science.',
-                icon: '🏋️',
               },
               {
                 title: 'OPTIMIZATION',
                 description:
                   'Nutrition, sleep, stress, and biomarker tracking in one complete system.',
-                icon: '🎯',
               },
             ].map((item, index) => (
               <div
@@ -578,8 +592,8 @@ function HomePage({ setPage }) {
 
                 <div className="relative z-10">
                   <div className="flex items-center justify-between mb-10">
-                    <div className="w-16 h-16 rounded-2xl border border-red-500/20 bg-red-600/10 flex items-center justify-center text-3xl leading-none group-hover:bg-red-600 transition duration-500">
-                      <span className="transition duration-500 group-hover:scale-110">{item.icon}</span>
+                    <div className="w-16 h-16 rounded-2xl border border-red-500/20 bg-red-600/10 flex items-center justify-center text-lg font-black tracking-wide text-red-500 group-hover:bg-red-600 group-hover:text-white transition duration-500">
+                      {String(index + 1).padStart(2, '0')}
                     </div>
 
                     <div className="h-[1px] flex-1 bg-gradient-to-r from-red-500/40 to-transparent ml-6"></div>
@@ -635,7 +649,6 @@ function HomePage({ setPage }) {
       'Body recomposition without crash dieting',
       'Strength training that respects your hormones',
                 ],
-                icon: '👩',
               },
               {
                 title: 'Men Reclaiming Performance',
@@ -649,7 +662,6 @@ function HomePage({ setPage }) {
       'Training that actually fits a busy life',
 
                 ],
-                icon: '👨',
               },
               {
                 title: 'Athletes & High Performers',
@@ -662,7 +674,6 @@ function HomePage({ setPage }) {
       'Body composition without losing strength',
       'Training built around your sport or goal',
                 ],
-                icon: '🏃',
               },
             ].map((item, index) => (
               <div
@@ -672,14 +683,6 @@ function HomePage({ setPage }) {
                 <div className="absolute top-0 right-0 w-52 h-52 bg-red-600/10 blur-3xl opacity-0 group-hover:opacity-100 transition duration-700"></div>
 
                 <div className="relative z-10">
-                  <div className="flex items-center justify-between mb-10">
-                    <div className="w-16 h-16 rounded-2xl bg-red-600/10 border border-red-500/20 flex items-center justify-center text-3xl leading-none group-hover:bg-red-600 transition duration-500">
-                      <span className="transition duration-500 group-hover:scale-110">{item.icon}</span>
-                    </div>
-
-                    <div className="h-[1px] flex-1 bg-gradient-to-r from-red-500/40 to-transparent ml-6"></div>
-                  </div>
-
                   <h3 className="text-4xl font-black leading-tight mb-6 max-w-sm">
                     {item.title}
                   </h3>
@@ -930,7 +933,7 @@ function HomePage({ setPage }) {
 
                 <div className="p-5">
                   <p className="mb-3 text-xs uppercase tracking-[4px] text-red-500">
-                    Hormone-Aware Coaching
+                    Always Fit Coaching
                   </p>
 
                   <h3 className="mb-3 text-2xl font-black leading-tight">
@@ -965,7 +968,7 @@ function HomePage({ setPage }) {
           <div className="flex flex-wrap justify-center gap-5">
             {[
               'ACE Certified Personal Trainer',
-              'NSCA Certified Strength & Conditioning Specialist',
+              'NSCA Strength & Conditioning',
               'ACE Hormonal Support Specialist',
               'ACE Fitness Nutrition Specialist',
               'ACE Health Coach',
@@ -1115,6 +1118,11 @@ function AboutPage() {
                 poster={aboutImage}
                 className="block h-full w-full object-cover object-[center_18%] bg-black"
                 controls
+                defaultMuted={false}
+                onLoadedMetadata={(event) => {
+                  event.currentTarget.muted = false
+                  event.currentTarget.volume = 1
+                }}
                 playsInline
                 preload="auto"
                 aria-label="Daniel Myrick explaining Always Fit coaching"
@@ -1152,9 +1160,14 @@ function AboutPage() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 mt-4 lg:mt-5">
-              <button className="bg-red-600 hover:bg-red-700 px-7 lg:px-8 py-3 rounded-full font-semibold text-sm lg:text-base transition shadow-2xl shadow-red-900/40">
+              <a
+                href={calendlyUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="bg-red-600 hover:bg-red-700 px-7 lg:px-8 py-3 rounded-full text-center font-semibold text-sm lg:text-base transition shadow-2xl shadow-red-900/40"
+              >
                 Book Free Assessment
-              </button>
+              </a>
 
               <button className="border border-white/15 hover:border-red-500 hover:bg-red-500/10 px-7 lg:px-8 py-3 rounded-full font-semibold text-sm lg:text-base transition">
                 View Transformations
@@ -1177,7 +1190,7 @@ function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               'ACE Certified Personal Trainer',
-              'NSCA Certified Strength & Conditioning Specialist',
+              'NSCA Strength & Conditioning',
               'ACE Hormonal Support Specialist',
               'ACE Fitness Nutrition Specialist',
               'ACE Health Coach',
@@ -1331,13 +1344,17 @@ function ServicesPage() {
                   ))}
                 </div>
 
-                <button className={`w-full py-3 rounded-full font-semibold text-sm sm:text-base transition-all duration-500 mt-auto ${
+                <a
+                  href={calendlyUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`block w-full py-3 rounded-full text-center font-semibold text-sm sm:text-base transition-all duration-500 mt-auto ${
                   plan.highlight
                     ? 'bg-red-600 hover:bg-red-700 shadow-2xl shadow-red-900/40'
                     : 'border border-white/15 hover:border-red-500 hover:bg-red-500/10'
                 }`}>
                   Book Assessment
-                </button>
+                </a>
               </div>
             </div>
           ))}
@@ -1361,9 +1378,14 @@ function ServicesPage() {
               </p>
             </div>
 
-            <button className="w-full rounded-full bg-red-600 px-8 py-3.5 text-sm sm:text-base font-semibold shadow-2xl shadow-red-900/40 transition hover:bg-red-700 sm:w-auto">
+            <a
+              href={calendlyUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="w-full rounded-full bg-red-600 px-8 py-3.5 text-center text-sm sm:text-base font-semibold shadow-2xl shadow-red-900/40 transition hover:bg-red-700 sm:w-auto"
+            >
               Book Assessment
-            </button>
+            </a>
           </div>
 
           <div className="relative z-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:gap-6">
@@ -1378,6 +1400,15 @@ function ServicesPage() {
                     className="block h-[260px] sm:h-[300px] md:h-[320px] lg:h-[340px] w-full object-contain"
                     controls
                     muted
+                    defaultMuted
+                    onLoadedMetadata={(event) => {
+                      event.currentTarget.muted = true
+                      event.currentTarget.volume = 0
+                    }}
+                    onVolumeChange={(event) => {
+                      event.currentTarget.muted = true
+                      event.currentTarget.volume = 0
+                    }}
                     playsInline
                     preload="metadata"
                     aria-label={`${video.title} training video`}
@@ -1420,9 +1451,14 @@ function ServicesPage() {
               </p>
             </div>
 
-            <button className="bg-red-600 hover:bg-red-700 transition px-10 py-5 rounded-full text-lg font-semibold shadow-2xl shadow-red-900/40 whitespace-nowrap">
+            <a
+              href={calendlyUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="bg-red-600 hover:bg-red-700 transition px-10 py-5 rounded-full text-center text-lg font-semibold shadow-2xl shadow-red-900/40 whitespace-nowrap"
+            >
               Ask About Partner Training
-            </button>
+            </a>
           </div>
         </section>
 
@@ -1441,9 +1477,14 @@ function ServicesPage() {
             Walk away with clarity on your goals, your physiology, and the most effective strategy for your transformation.
           </p>
 
-          <button className="bg-red-600 hover:bg-red-700 px-12 py-5 rounded-full text-lg font-semibold transition shadow-2xl shadow-red-900/40">
+          <a
+            href={calendlyUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex bg-red-600 hover:bg-red-700 px-12 py-5 rounded-full text-lg font-semibold transition shadow-2xl shadow-red-900/40"
+          >
             Book Free Assessment
-          </button>
+          </a>
         </div>
       </div>
     </section>
@@ -1452,12 +1493,6 @@ function ServicesPage() {
 
 function TransformationsPage() {
   const results = [
-    {
-      image: transformationOne,
-      title: 'Body Recomposition',
-      text: 'Focused strength, nutrition, and consistency coaching.',
-      featured: true,
-    },
     {
       image: galleryTwo,
       title: 'Sustainable Fat Loss',
@@ -1498,16 +1533,6 @@ function TransformationsPage() {
       image: resultFour,
       title: 'Strength-Led Change',
       text: 'Body composition work supported by smart strength progression.',
-    },
-    {
-      image: resultFive,
-      title: 'Metabolic Momentum',
-      text: 'Hormone-aware structure for steady and realistic progress.',
-    },
-    {
-      image: galleryFour,
-      title: 'Performance Detail',
-      text: 'A training snapshot from the work behind the result.',
     },
     {
       image: resultSix,
@@ -1603,7 +1628,7 @@ function TransformationsPage() {
 
               <div className="p-4 sm:p-5 flex-1 flex flex-col">
                 <p className="mb-3 text-xs uppercase tracking-[4px] text-red-500">
-                  Hormone-Aware Coaching
+                  Always Fit Coaching
                 </p>
 
                 <h3 className="mb-2 text-xl sm:text-2xl font-black leading-tight">
@@ -1709,9 +1734,14 @@ function ContactPage() {
                   className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-5 text-white placeholder:text-white/40 focus:outline-none focus:border-red-500 transition"
                 />
 
-                <button className="w-full bg-red-600 hover:bg-red-700 transition-all duration-500 py-5 rounded-full text-lg font-semibold shadow-2xl shadow-red-900/40 hover:shadow-red-900/60">
+                <a
+                  href={calendlyUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block w-full bg-red-600 hover:bg-red-700 transition-all duration-500 py-5 rounded-full text-center text-lg font-semibold shadow-2xl shadow-red-900/40 hover:shadow-red-900/60"
+                >
                   Book Free Assessment
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -1730,15 +1760,6 @@ function ContactPage() {
                 </h2>
 
                 <div className="space-y-8">
-                  <div>
-                    <p className="uppercase tracking-[3px] text-red-500 text-xs mb-3">
-                      Phone
-                    </p>
-                    <p className="text-white/80 text-xl font-medium">
-                      470-218-3360
-                    </p>
-                  </div>
-
                   <div>
                     <p className="uppercase tracking-[3px] text-red-500 text-xs mb-3">
                       Email

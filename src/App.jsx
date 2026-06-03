@@ -907,6 +907,12 @@ function HomePage({ setPage }) {
                   'Sustainable training, nutrition, and recovery habits working together.',
                 image: resultTwo,
               },
+              {
+                title: 'Conditioning Progress',
+                subtitle:
+                  'A practical training system for strength, energy, and confidence.',
+                image: resultThree,
+              },
             ].map((item, index) => (
               <div
                 key={index}

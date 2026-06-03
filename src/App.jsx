@@ -1546,11 +1546,7 @@ function TransformationsPage() {
       text: 'One-on-one accountability with a clear training target.',
       featured: true,
     },
-    {
-      image: resultEight,
-      title: 'Confidence Phase',
-      text: 'A focused block built around strength and consistency.',
-    },
+    // Removed 'Confidence Phase' as requested
     {
       image: resultNine,
       title: 'Training Foundation',

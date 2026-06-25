@@ -3,7 +3,6 @@ import logoImage from './assets/images/alwaysfit-logo-final.jpeg?v=20260603'
 import heroCoachImage from './assets/images/photo-output (4) (1).jpg'
 import aboutImage from './assets/images/IMG_1692.jpg'
 import transformationOne from './assets/images/before after.jpeg'
-import transformationThree from './assets/images/IMG_0415.JPG'
 import imageeeeenew from './assets/images/imageeeeenew .jpeg'
 import transformationFour from './assets/images/C2FA53C3-EFDD-4623-AB61-6E19BA443922 (2).PNG'
 import galleryOne from './assets/images/648624B6-5595-4867-A166-F0E36611A401 (2).PNG'
@@ -15,7 +14,6 @@ import resultThree from './assets/images/C4B4F7EF-502D-4D00-A265-308956F853B9.JP
 import resultFour from './assets/images/FA4A2053-3277-480E-A481-8688A9ED3DDA.JPG'
 import resultSix from './assets/images/IMG_8788.jpg'
 import resultSeven from './assets/images/IMG_8927.PNG'
-import resultEight from './assets/images/IMG_8931.JPG'
 import resultNine from './assets/images/IMG_9291.jpg'
 import resultTen from './assets/images/IMG_9292.jpg'
 import resultEleven from './assets/images/IMG_9293.jpg'
@@ -53,6 +51,11 @@ export default function AlwaysFitPreview() {
   const [page, setPage] = useState('home')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+  const navigateTo = (nextPage) => {
+    setPage(nextPage)
+    setMobileMenuOpen(false)
+  }
+
   const navItems = [
     ['home', 'Home'],
     ['about', 'About'],
@@ -72,20 +75,16 @@ export default function AlwaysFitPreview() {
       case 'contact':
         return <ContactPage />
       default:
-        return <HomePage setPage={setPage} />
+        return <HomePage setPage={navigateTo} />
     }
   }
-
-  useEffect(() => {
-    setMobileMenuOpen(false)
-  }, [page])
 
   return (
     <div className="bg-black text-white min-h-screen font-sans overflow-x-hidden">
       <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/40 border-b border-white/10">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-3 md:gap-4 py-4 md:py-5 px-4 sm:px-6">
           <button
-            onClick={() => setPage('home')}
+            onClick={() => navigateTo('home')}
             className="flex items-center gap-3 min-w-0"
           >
             <img
@@ -102,7 +101,7 @@ export default function AlwaysFitPreview() {
             {navItems.map(([key, label]) => (
               <button
                 key={key}
-                onClick={() => setPage(key)}
+                onClick={() => navigateTo(key)}
                 className={`transition hover:text-red-500 ${
                   page === key ? 'text-red-500' : ''
                 }`}
@@ -164,7 +163,7 @@ export default function AlwaysFitPreview() {
               {navItems.map(([key, label]) => (
                 <button
                   key={key}
-                  onClick={() => setPage(key)}
+                  onClick={() => navigateTo(key)}
                   className={`w-full rounded-2xl px-4 py-3 text-left transition ${
                     page === key
                       ? 'bg-white/10 text-red-500'
@@ -216,7 +215,7 @@ export default function AlwaysFitPreview() {
               {navItems.map(([key, label]) => (
                 <button
                   key={key}
-                  onClick={() => setPage(key)}
+                  onClick={() => navigateTo(key)}
                   className="text-left hover:text-red-500 transition"
                 >
                   {label}
@@ -1248,7 +1247,7 @@ function ServicesPage() {
           </h1>
 
           <p className="text-white/65 text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl mx-auto">
-            All training is one-on-one, in-person, at our private studio in Chamblee / Brookhaven Metro ATL Area. Pricing shared during your free assessment.
+            Choose private one-on-one training at our Chamblee / Brookhaven studio or online fitness coaching built around your schedule, goals, and recovery. Pricing shared during your free assessment.
           </p>
         </div>
 
@@ -1360,6 +1359,83 @@ function ServicesPage() {
             </div>
           ))}
         </div>
+
+        <section className="relative mb-20 lg:mb-24 overflow-hidden rounded-[32px] lg:rounded-[40px] border border-white/10 bg-gradient-to-br from-white/[0.07] via-black to-red-950/20 p-5 sm:p-8 lg:p-10">
+          <div className="absolute left-0 top-0 h-[420px] w-[420px] rounded-full bg-red-600/10 blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 h-[360px] w-[360px] rounded-full bg-white/5 blur-3xl"></div>
+
+          <div className="relative z-10 grid grid-cols-1 gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            <div>
+              <p className="mb-5 text-sm uppercase tracking-[5px] text-red-500">
+                Online Coaching
+              </p>
+
+              <h2 className="mb-6 text-3xl font-black leading-tight sm:text-4xl md:text-5xl">
+                Fitness Coaching For Nurses & Healthcare Professionals
+              </h2>
+
+              <p className="mb-8 max-w-3xl text-base leading-relaxed text-white/65 md:text-lg lg:text-xl">
+                Built for nurses, clinicians, and healthcare workers who want strength, body composition, and better energy without pretending every week looks the same. Your plan adapts around long shifts, night shifts, stressful days, and real recovery needs.
+              </p>
+
+              <div className="flex flex-col gap-4 sm:flex-row">
+                <a
+                  href={calendlyUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-full bg-red-600 px-8 py-4 text-center text-base font-semibold shadow-2xl shadow-red-900/40 transition hover:bg-red-700"
+                >
+                  Book Online Coaching Call
+                </a>
+
+                <a
+                  href="mailto:alwaysfitdaniel@gmail.com?subject=Online%20Coaching%20For%20Healthcare%20Professionals"
+                  className="rounded-full border border-white/15 px-8 py-4 text-center text-base font-semibold transition hover:border-red-500 hover:bg-red-500/10"
+                >
+                  Ask About Healthcare Coaching
+                </a>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {[
+                {
+                  title: 'Shift-Friendly Training',
+                  text: 'Strength plans that flex around 12-hour shifts, rotating schedules, and limited training windows.',
+                },
+                {
+                  title: 'Energy & Recovery Support',
+                  text: 'Programming adjusted for sleep debt, stress load, soreness, and the physical demand of patient care.',
+                },
+                {
+                  title: 'Simple Nutrition Structure',
+                  text: 'Practical meal timing and habit coaching for busy workdays, night shifts, and inconsistent breaks.',
+                },
+                {
+                  title: 'Online Accountability',
+                  text: 'Clear check-ins, progress tracking, and plan updates so you know exactly what to do each week.',
+                },
+              ].map((item, index) => (
+                <div
+                  key={item.title}
+                  className="group h-full rounded-[24px] border border-white/10 bg-black/35 p-5 transition duration-500 hover:-translate-y-2 hover:border-red-500"
+                >
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl border border-red-500/20 bg-red-600/10 text-sm font-black text-red-500 transition group-hover:bg-red-600 group-hover:text-white">
+                    {String(index + 1).padStart(2, '0')}
+                  </div>
+
+                  <h3 className="mb-3 text-xl font-black leading-tight">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-sm leading-relaxed text-white/65">
+                    {item.text}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         <section className="relative mb-20 lg:mb-24 overflow-hidden rounded-[32px] lg:rounded-[40px] border border-white/10 bg-black/40 p-4 sm:p-6 md:p-8">
           <div className="absolute right-0 top-0 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-3xl"></div>
@@ -1716,6 +1792,9 @@ function ContactPage() {
                   </option>
                   <option className="bg-black">
                     Athlete / serious lifter
+                  </option>
+                  <option className="bg-black">
+                    Nurse / healthcare professional interested in online coaching
                   </option>
                   <option className="bg-black">Other</option>
                 </select>

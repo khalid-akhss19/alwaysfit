@@ -24,6 +24,7 @@ import resultFourteen from './assets/images/IMG_9306.jpg'
 const aboutVideo = '/assets/videos/about-video.mov'
 const danielSectionVideo = '/assets/videos/new.mp4'
 const calendlyUrl = 'https://calendly.com/alwaysfit_daniel/alwaysfit'
+const nurseCoachingVideoUrl = 'https://www.youtube.com/embed/ilejNnIAX_U'
 const trainingVideos = [
   {
     title: 'Strength Coaching',
@@ -1397,42 +1398,17 @@ function ServicesPage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {[
-                {
-                  title: 'Shift-Friendly Training',
-                  text: 'Strength plans that flex around 12-hour shifts, rotating schedules, and limited training windows.',
-                },
-                {
-                  title: 'Energy & Recovery Support',
-                  text: 'Programming adjusted for sleep debt, stress load, soreness, and the physical demand of patient care.',
-                },
-                {
-                  title: 'Simple Nutrition Structure',
-                  text: 'Practical meal timing and habit coaching for busy workdays, night shifts, and inconsistent breaks.',
-                },
-                {
-                  title: 'Online Accountability',
-                  text: 'Clear check-ins, progress tracking, and plan updates so you know exactly what to do each week.',
-                },
-              ].map((item, index) => (
-                <div
-                  key={item.title}
-                  className="group h-full rounded-[24px] border border-white/10 bg-black/35 p-5 transition duration-500 hover:-translate-y-2 hover:border-red-500"
-                >
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl border border-red-500/20 bg-red-600/10 text-sm font-black text-red-500 transition group-hover:bg-red-600 group-hover:text-white">
-                    {String(index + 1).padStart(2, '0')}
-                  </div>
-
-                  <h3 className="mb-3 text-xl font-black leading-tight">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-sm leading-relaxed text-white/65">
-                    {item.text}
-                  </p>
-                </div>
-              ))}
+            <div className="overflow-hidden rounded-[24px] border border-white/10 bg-black/35">
+              <div className="relative aspect-video bg-black">
+                <iframe
+                  title="Nurse coaching video"
+                  src={nurseCoachingVideoUrl}
+                  className="absolute inset-0 h-full w-full"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
             </div>
           </div>
         </section>

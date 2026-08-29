@@ -52,7 +52,25 @@ export default function AlwaysFitPreview() {
   const [page, setPage] = useState('home')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+  // Initialize page from URL hash on mount
+  useEffect(() => {
+    const hash = window.location.hash.slice(1) || 'home'
+    setPage(hash)
+  }, [])
+
+  // Listen for hash changes (browser back/forward)
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.slice(1) || 'home'
+      setPage(hash)
+    }
+
+    window.addEventListener('hashchange', handleHashChange)
+    return () => window.removeEventListener('hashchange', handleHashChange)
+  }, [])
+
   const navigateTo = (nextPage) => {
+    window.location.hash = nextPage
     setPage(nextPage)
     setMobileMenuOpen(false)
   }

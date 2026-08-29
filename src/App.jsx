@@ -1723,26 +1723,8 @@ function ContactPage() {
       </div>
 
       <div className="relative z-10">
-        {/* Header Section */}
-        <div className="pt-16 pb-12 sm:pt-20 sm:pb-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto text-center">
-            <p className="uppercase tracking-[5px] text-red-500 text-xs sm:text-sm mb-4 sm:mb-6 font-semibold">
-              Contact & Booking
-            </p>
-
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 sm:mb-8 text-white">
-              Book Your Free Assessment
-            </h1>
-
-            <p className="text-white/70 text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
-              30 minutes. No obligation. Walk away with clarity on your goals, your physiology, and your path forward.
-            </p>
-          </div>
-        </div>
-
         {/* Main Form Section */}
-        <div className="px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16">
-          <div className="max-w-6xl mx-auto">
+        <div className="px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16 pt-12 sm:pt-16">
             {/* Full Width Form */}
             <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-b from-white/[0.08] via-white/[0.03] to-transparent p-6 sm:p-8 md:p-12 backdrop-blur-sm mb-12">
               <div className="absolute top-0 right-0 w-80 h-80 bg-red-600/15 blur-3xl -z-10"></div>

@@ -1725,6 +1725,7 @@ function ContactPage() {
       <div className="relative z-10">
         {/* Main Form Section */}
         <div className="px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16 pt-12 sm:pt-16">
+          <div className="max-w-6xl mx-auto">
             {/* Full Width Form */}
             <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-b from-white/[0.08] via-white/[0.03] to-transparent p-6 sm:p-8 md:p-12 backdrop-blur-sm mb-12">
               <div className="absolute top-0 right-0 w-80 h-80 bg-red-600/15 blur-3xl -z-10"></div>

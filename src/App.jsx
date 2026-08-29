@@ -23,7 +23,7 @@ import resultFourteen from './assets/images/IMG_9306.jpg'
 
 const aboutVideo = '/assets/videos/about-video.mov'
 const danielSectionVideo = '/assets/videos/new.mp4'
-const calendlyUrl = 'https://api.leadconnectorhq.com/widget/booking/ItaKe6QwbnYTx5RmFn79'
+const bookingUrl = 'https://api.leadconnectorhq.com/widget/booking/ItaKe6QwbnYTx5RmFn79'
 const nurseCoachingVideoUrl = 'https://www.youtube.com/embed/ilejNnIAX_U'
 const trainingVideos = [
   {
@@ -81,6 +81,7 @@ export default function AlwaysFitPreview() {
     ['services', 'Services'],
     ['transformations', 'Transformations'],
     ['contact', 'Contact'],
+    ['booking', 'Book Now'],
   ]
 
   const renderPage = () => {
@@ -93,6 +94,8 @@ export default function AlwaysFitPreview() {
         return <TransformationsPage />
       case 'contact':
         return <ContactPage />
+      case 'booking':
+        return <BookingPage />
       default:
         return <HomePage setPage={navigateTo} />
     }
@@ -131,14 +134,12 @@ export default function AlwaysFitPreview() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <a
-              href={calendlyUrl}
-              target="_blank"
-              rel="noreferrer"
+            <button
+              onClick={() => navigateTo('booking')}
               className="hidden lg:inline-flex bg-red-600 hover:bg-red-700 transition px-4 xl:px-6 py-3 rounded-full text-sm font-semibold shadow-2xl shadow-red-900/40"
             >
               Book Free Assessment
-            </a>
+            </button>
 
             <button
               type="button"
@@ -194,14 +195,12 @@ export default function AlwaysFitPreview() {
               ))}
             </nav>
 
-            <a
-              href={calendlyUrl}
-              target="_blank"
-              rel="noreferrer"
+            <button
+              onClick={() => navigateTo('booking')}
               className="inline-flex w-full items-center justify-center bg-red-600 hover:bg-red-700 transition px-6 py-3 rounded-full text-sm font-semibold shadow-2xl shadow-red-900/40"
             >
               Book Free Assessment
-            </a>
+            </button>
           </div>
         </div>
       </header>
@@ -364,14 +363,12 @@ function HomePage({ setPage }) {
 
                   <div className="flex flex-col sm:flex-row gap-5">
                     {slide.action === 'contact' ? (
-                      <a
-                        href={calendlyUrl}
-                        target="_blank"
-                        rel="noreferrer"
+                      <button
+                        onClick={() => navigateTo('booking')}
                         className="bg-red-600 hover:bg-red-700 px-8 py-4 rounded-full font-semibold text-lg text-center transition shadow-2xl shadow-red-900/40"
                       >
                         {slide.button}
-                      </a>
+                      </button>
                     ) : (
                       <button
                         onClick={() => setPage(slide.action)}
@@ -564,14 +561,12 @@ function HomePage({ setPage }) {
                 Learn More About Daniel
               </button>
 
-              <a
-                href={calendlyUrl}
-                target="_blank"
-                rel="noreferrer"
+              <button
+                onClick={() => navigateTo('booking')}
                 className="border border-white/15 hover:border-red-500 hover:bg-red-500/10 px-8 py-4 rounded-full text-center font-semibold text-lg transition"
               >
                 Book Assessment
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -1179,14 +1174,12 @@ function AboutPage() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 mt-4 lg:mt-5">
-              <a
-                href={calendlyUrl}
-                target="_blank"
-                rel="noreferrer"
+              <button
+                onClick={() => navigateTo('booking')}
                 className="bg-red-600 hover:bg-red-700 px-7 lg:px-8 py-3 rounded-full text-center font-semibold text-sm lg:text-base transition shadow-2xl shadow-red-900/40"
               >
                 Book Free Assessment
-              </a>
+              </button>
 
               <button className="border border-white/15 hover:border-red-500 hover:bg-red-500/10 px-7 lg:px-8 py-3 rounded-full font-semibold text-sm lg:text-base transition">
                 View Transformations
@@ -1363,17 +1356,15 @@ function ServicesPage() {
                   ))}
                 </div>
 
-                <a
-                  href={calendlyUrl}
-                  target="_blank"
-                  rel="noreferrer"
+                <button
+                  onClick={() => navigateTo('booking')}
                   className={`block w-full py-3 rounded-full text-center font-semibold text-sm sm:text-base transition-all duration-500 mt-auto ${
                   plan.highlight
                     ? 'bg-red-600 hover:bg-red-700 shadow-2xl shadow-red-900/40'
                     : 'border border-white/15 hover:border-red-500 hover:bg-red-500/10'
                 }`}>
                   Book Assessment
-                </a>
+                </button>
               </div>
             </div>
           ))}
@@ -1398,14 +1389,12 @@ function ServicesPage() {
               </p>
 
               <div className="flex flex-col gap-4 sm:flex-row">
-                <a
-                  href={calendlyUrl}
-                  target="_blank"
-                  rel="noreferrer"
+                <button
+                  onClick={() => navigateTo('booking')}
                   className="rounded-full bg-red-600 px-8 py-4 text-center text-base font-semibold shadow-2xl shadow-red-900/40 transition hover:bg-red-700"
                 >
                   Book Online Coaching Call
-                </a>
+                </button>
 
                 <a
                   href="mailto:alwaysfitdaniel@gmail.com?subject=Online%20Coaching%20For%20Healthcare%20Professionals"
@@ -1449,14 +1438,12 @@ function ServicesPage() {
               </p>
             </div>
 
-            <a
-              href={calendlyUrl}
-              target="_blank"
-              rel="noreferrer"
+            <button
+              onClick={() => navigateTo('booking')}
               className="w-full rounded-full bg-red-600 px-8 py-3.5 text-center text-sm sm:text-base font-semibold shadow-2xl shadow-red-900/40 transition hover:bg-red-700 sm:w-auto"
             >
               Book Assessment
-            </a>
+            </button>
           </div>
 
           <div className="relative z-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:gap-6">
@@ -1522,14 +1509,12 @@ function ServicesPage() {
               </p>
             </div>
 
-            <a
-              href={calendlyUrl}
-              target="_blank"
-              rel="noreferrer"
+            <button
+              onClick={() => navigateTo('booking')}
               className="bg-red-600 hover:bg-red-700 transition px-10 py-5 rounded-full text-center text-lg font-semibold shadow-2xl shadow-red-900/40 whitespace-nowrap"
             >
               Ask About Partner Training
-            </a>
+            </button>
           </div>
         </section>
 
@@ -1548,14 +1533,12 @@ function ServicesPage() {
             Walk away with clarity on your goals, your physiology, and the most effective strategy for your transformation.
           </p>
 
-          <a
-            href={calendlyUrl}
-            target="_blank"
-            rel="noreferrer"
+          <button
+            onClick={() => navigateTo('booking')}
             className="inline-flex bg-red-600 hover:bg-red-700 px-12 py-5 rounded-full text-lg font-semibold transition shadow-2xl shadow-red-900/40"
           >
             Book Free Assessment
-          </a>
+          </button>
         </div>
       </div>
     </section>
@@ -1708,6 +1691,62 @@ function TransformationsPage() {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function BookingPage() {
+  return (
+    <section className="relative w-full bg-[#050505] overflow-hidden min-h-screen">
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-red-600/15 blur-3xl rounded-full"></div>
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-red-600/10 blur-3xl rounded-full"></div>
+      </div>
+
+      <div className="relative z-10">
+        {/* Header Section */}
+        <div className="pt-20 pb-12 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto text-center">
+            <p className="uppercase tracking-[5px] text-red-500 text-xs sm:text-sm mb-4 sm:mb-6 font-semibold">
+              Book Your Session
+            </p>
+
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-4 sm:mb-6 text-white">
+              Schedule Your Free Assessment
+            </h1>
+
+            <p className="text-white/70 text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
+              Choose a time that works best for you. Our team will guide you through your fitness journey.
+            </p>
+          </div>
+        </div>
+
+        {/* Booking Widget Section */}
+        <div className="px-4 sm:px-6 lg:px-8 pb-20">
+          <div className="max-w-6xl mx-auto">
+            <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-b from-white/[0.08] via-white/[0.03] to-transparent p-6 sm:p-8 md:p-12 backdrop-blur-sm">
+              <div className="absolute top-0 right-0 w-80 h-80 bg-red-600/15 blur-3xl -z-10"></div>
+              <div className="absolute bottom-0 left-0 w-96 h-96 bg-red-600/10 blur-3xl -z-10"></div>
+
+              {/* Embedded Booking Widget - Full Width */}
+              <div className="w-full bg-white/5 rounded-2xl overflow-hidden border border-white/5 flex justify-center">
+                <iframe
+                  src={bookingUrl}
+                  title="Book Free Assessment"
+                  className="border-none"
+                  style={{ 
+                    minHeight: '600px',
+                    width: '90%',
+                    maxWidth: '900px',
+                    background: 'transparent'
+                  }}
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

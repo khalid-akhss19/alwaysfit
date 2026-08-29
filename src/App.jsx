@@ -1698,110 +1698,138 @@ function TransformationsPage() {
 
 function ContactPage() {
   return (
-    <section className="relative pt-40 pb-32 px-6 bg-[#050505] min-h-screen overflow-hidden">
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-red-600/10 blur-3xl rounded-full"></div>
-        <div className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-red-600/10 blur-3xl rounded-full"></div>
+    <section className="relative w-full bg-[#050505] overflow-hidden">
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-red-600/15 blur-3xl rounded-full"></div>
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-red-600/10 blur-3xl rounded-full"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center max-w-5xl mx-auto mb-24">
-          <p className="uppercase tracking-[5px] text-red-500 text-sm mb-5">
-            Contact & Booking
-          </p>
+      <div className="relative z-10">
+        {/* Header Section */}
+        <div className="pt-20 pb-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto text-center">
+            <p className="uppercase tracking-[5px] text-red-500 text-sm mb-6 font-semibold">
+              Contact & Booking
+            </p>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-8">
-            Book Your Free Assessment
-          </h1>
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-8 text-white">
+              Book Your Free Assessment
+            </h1>
 
-          <p className="text-white/65 text-xl leading-relaxed max-w-4xl mx-auto">
-            30 minutes. No obligation. Walk away with clarity on your goals, your physiology, and your path forward.
-          </p>
+            <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto">
+              30 minutes. No obligation. Walk away with clarity on your goals, your physiology, and your path forward.
+            </p>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 items-start mb-24">
-          <div className="relative overflow-hidden rounded-[40px] border border-white/10 bg-gradient-to-b from-white/[0.06] to-transparent p-10 md:p-14">
-            <div className="absolute top-0 right-0 w-72 h-72 bg-red-600/10 blur-3xl"></div>
+        {/* Main Form Section */}
+        <div className="px-4 sm:px-6 lg:px-8 pb-16">
+          <div className="max-w-6xl mx-auto">
+            {/* Full Width Form */}
+            <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-b from-white/[0.08] via-white/[0.03] to-transparent p-8 sm:p-10 md:p-12 backdrop-blur-sm mb-12">
+              <div className="absolute top-0 right-0 w-80 h-80 bg-red-600/15 blur-3xl -z-10"></div>
+              <div className="absolute bottom-0 left-0 w-96 h-96 bg-red-600/10 blur-3xl -z-10"></div>
 
-            <div className="relative z-10">
-              <div className="mb-12">
-                <p className="uppercase tracking-[4px] text-red-500 text-xs mb-4">
-                  ALWAYS FIT NURSES
+              <div className="relative z-10 mb-8">
+                <p className="uppercase tracking-[4px] text-red-500 text-xs font-semibold mb-4">
+                  Get Started Now
                 </p>
 
-                <h2 className="text-4xl md:text-5xl font-black leading-tight mb-6">
-                  Find Your Best
-                  <br />
-                  Fit Coaching Plan
+                <h2 className="text-4xl sm:text-5xl font-black leading-tight mb-6 text-white">
+                  Find Your Best Fit Coaching Plan
                 </h2>
 
-                <p className="text-white/65 text-lg leading-relaxed max-w-2xl">
-                  Tell us a little about yourself. We'll use this information to understand how we can best support you.
+                <p className="text-white/70 text-base sm:text-lg leading-relaxed">
+                  Tell us a little about yourself. We'll use this information to understand how we can best support you on your fitness journey.
                 </p>
               </div>
 
-              <div className="w-full">
-                <a
-                  href="https://api.leadconnectorhq.com/widget/form/ITruCe41VLMfT2koHOVc"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="block w-full bg-red-600 hover:bg-red-700 transition-all duration-500 py-5 rounded-full text-center text-lg font-semibold shadow-2xl shadow-red-900/40"
+              {/* Embedded Form - Full Width */}
+              <div className="w-full bg-white/5 rounded-2xl overflow-hidden border border-white/5 flex justify-center">
+                <iframe
+                  src="https://api.leadconnectorhq.com/widget/form/ITruCe41VLMfT2koHOVc"
+                  title="Apply for Coaching Form"
+                  className="border-none"
+                  style={{ 
+                    minHeight: '800px',
+                    width: '90%',
+                    maxWidth: '900px',
+                    background: 'transparent'
+                  }}
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </div>
+
+            {/* Contact Info Below Form */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Email Card */}
+              <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.02] p-8 backdrop-blur-sm">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-red-600/10 blur-3xl -z-10"></div>
+
+                <p className="uppercase tracking-[4px] text-red-500 text-xs font-semibold mb-6">
+                  Email
+                </p>
+
+                <a 
+                  href="mailto:alwaysfitdaniel@gmail.com"
+                  className="text-white/90 text-lg font-bold hover:text-red-400 transition duration-300 break-all block"
                 >
-                  Apply for Coaching
+                  alwaysfitdaniel@gmail.com
                 </a>
+              </div>
+
+              {/* Location Card */}
+              <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.02] p-8 backdrop-blur-sm">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-red-600/10 blur-3xl -z-10"></div>
+
+                <p className="uppercase tracking-[4px] text-red-500 text-xs font-semibold mb-6">
+                  Studio Location
+                </p>
+
+                <p className="text-white/80 text-base font-medium leading-relaxed">
+                  Private Studio<br />
+                  Chamblee / Brookhaven<br />
+                  <span className="text-white/60">Atlanta, GA Metro Area</span>
+                </p>
+              </div>
+
+              {/* Hours Card */}
+              <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.02] p-8 backdrop-blur-sm">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-red-600/10 blur-3xl -z-10"></div>
+
+                <p className="uppercase tracking-[4px] text-red-500 text-xs font-semibold mb-6">
+                  Hours
+                </p>
+
+                <p className="text-white/80 text-base font-medium leading-relaxed">
+                  Mon – Sat<br />
+                  5 AM – 9 PM<br />
+                  <span className="text-white/60">Sun: By appointment</span>
+                </p>
+              </div>
+            </div>
+
+            {/* Info Note */}
+            <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-b from-red-600/5 to-transparent p-6 backdrop-blur-sm mt-8">
+              <div className="absolute top-0 right-0 w-48 h-48 bg-red-600/10 blur-3xl -z-10"></div>
+              
+              <div className="relative z-10">
+                <p className="uppercase tracking-[3px] text-red-500 text-xs font-semibold mb-3">
+                  Quick Note
+                </p>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  After booking, the exact studio address will be shared during your consultation call.
+                </p>
               </div>
             </div>
           </div>
+        </div>
 
-          <div className="space-y-8">
-            <div className="relative overflow-hidden rounded-[36px] border border-white/10 bg-gradient-to-b from-white/[0.06] to-transparent p-10">
-              <div className="absolute top-0 right-0 w-60 h-60 bg-red-600/10 blur-3xl"></div>
-
-              <div className="relative z-10">
-                <p className="uppercase tracking-[4px] text-red-500 text-xs mb-5">
-                  Contact Information
-                </p>
-
-                <h2 className="text-4xl font-black mb-10 leading-tight">
-                  Reach Out Directly
-                </h2>
-
-                <div className="space-y-8">
-                  <div>
-                    <p className="uppercase tracking-[3px] text-red-500 text-xs mb-3">
-                      Email
-                    </p>
-                    <p className="text-white/80 text-xl font-medium break-all">
-                      alwaysfitdaniel@gmail.com
-                    </p>
-                  </div>
-
-                  <div>
-                    <p className="uppercase tracking-[3px] text-red-500 text-xs mb-3">
-                      Studio Location
-                    </p>
-                    <p className="text-white/70 text-lg leading-relaxed">
-                      Private Studio — Chamblee / Brookhaven,
-                      <br />
-                      Atlanta GA Metro ATL Area
-                    </p>
-                  </div>
-
-                  <div>
-                    <p className="uppercase tracking-[3px] text-red-500 text-xs mb-3">
-                      Hours
-                    </p>
-                    <p className="text-white/70 text-lg leading-relaxed">
-                      Mon – Sat: 5 AM – 9 PM
-                      <br />
-                      Sunday: By appointment
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative overflow-hidden rounded-[36px] border border-white/10 bg-black h-[420px] group lg:hidden">
+        {/* Map Section - Desktop */}
+        <div className="hidden lg:block px-4 sm:px-6 lg:px-8 pb-20">
+          <div className="max-w-6xl mx-auto">
+            <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-black h-[500px] group">
               <iframe
                 title="Always Fit Studio Location"
                 src="https://maps.google.com/maps?q=Brookhaven%20Atlanta&t=&z=11&ie=UTF8&iwloc=&output=embed"
@@ -1809,20 +1837,20 @@ function ContactPage() {
                 loading="lazy"
               ></iframe>
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none"></div>
 
-              <div className="absolute bottom-6 left-6 right-6">
-                <div className="backdrop-blur-xl bg-black/30 border border-white/10 rounded-3xl p-5">
-                  <p className="uppercase tracking-[4px] text-red-500 text-xs mb-3">
+              <div className="absolute bottom-8 left-8 right-8">
+                <div className="backdrop-blur-xl bg-black/40 border border-white/10 rounded-2xl p-6 max-w-sm">
+                  <p className="uppercase tracking-[4px] text-red-500 text-xs font-semibold mb-3">
                     Metro Atlanta Studio
                   </p>
 
-                  <h3 className="text-2xl font-black mb-2">
-                    Chamblee / Brookhaven Area
+                  <h3 className="text-2xl font-black mb-2 text-white">
+                    Chamblee / Brookhaven
                   </h3>
 
-                  <p className="text-white/65 leading-relaxed text-sm">
-                    Exact address shared after consultation booking.
+                  <p className="text-white/70 leading-relaxed text-sm">
+                    Exact address shared after booking confirmation.
                   </p>
                 </div>
               </div>

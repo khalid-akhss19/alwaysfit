@@ -1736,64 +1736,17 @@ function ContactPage() {
                 </h2>
 
                 <p className="text-white/65 text-lg leading-relaxed max-w-2xl">
-                  Fill out the form below and we'll reach out to schedule your complimentary 30-minute assessment.
+                  30 minutes. No obligation. Walk away with clarity on your goals, your physiology, and your path forward.
                 </p>
               </div>
 
-              <div className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <input
-                    placeholder="Full Name"
-                    className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-5 text-white placeholder:text-white/40 focus:outline-none focus:border-red-500 transition"
-                  />
-
-                  <input
-                    placeholder="Email Address"
-                    className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-5 text-white placeholder:text-white/40 focus:outline-none focus:border-red-500 transition"
-                  />
-                </div>
-
-                <input
-                  placeholder="Phone Number"
-                  className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-5 text-white placeholder:text-white/40 focus:outline-none focus:border-red-500 transition"
-                />
-
-                <select className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-red-500 transition">
-                  <option className="bg-black">Which describes you best?</option>
-                  <option className="bg-black">
-                    Woman managing PCOS / perimenopause / menopause
-                  </option>
-                  <option className="bg-black">
-                    Man 35+ wanting performance & body composition
-                  </option>
-                  <option className="bg-black">
-                    Athlete / serious lifter
-                  </option>
-                  <option className="bg-black">
-                    Nurse / healthcare professional interested in online coaching
-                  </option>
-                  <option className="bg-black">Other</option>
-                </select>
-
-                <textarea
-                  rows="5"
-                  placeholder="What's your #1 goal?"
-                  className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-5 text-white placeholder:text-white/40 focus:outline-none focus:border-red-500 transition resize-none"
-                ></textarea>
-
-                <input
-                  placeholder="Best time to reach you"
-                  className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-5 text-white placeholder:text-white/40 focus:outline-none focus:border-red-500 transition"
-                />
-
-                <a
-                  href={calendlyUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="block w-full bg-red-600 hover:bg-red-700 transition-all duration-500 py-5 rounded-full text-center text-lg font-semibold shadow-2xl shadow-red-900/40 hover:shadow-red-900/60"
-                >
-                  Book Free Assessment
-                </a>
+              <div className="w-full">
+                <iframe
+                  title="Always Fit - Booking Form"
+                  src="https://api.leadconnectorhq.com/widget/form/ITruCe41VLMfT2koHOVc"
+                  className="w-full h-[800px] rounded-2xl border border-white/10"
+                  loading="lazy"
+                ></iframe>
               </div>
             </div>
           </div>

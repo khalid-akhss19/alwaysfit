@@ -1724,40 +1724,40 @@ function ContactPage() {
 
       <div className="relative z-10">
         {/* Header Section */}
-        <div className="pt-20 pb-16 px-4 sm:px-6 lg:px-8">
+        <div className="pt-16 pb-12 sm:pt-20 sm:pb-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto text-center">
-            <p className="uppercase tracking-[5px] text-red-500 text-sm mb-6 font-semibold">
+            <p className="uppercase tracking-[5px] text-red-500 text-xs sm:text-sm mb-4 sm:mb-6 font-semibold">
               Contact & Booking
             </p>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-8 text-white">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 sm:mb-8 text-white">
               Book Your Free Assessment
             </h1>
 
-            <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto">
+            <p className="text-white/70 text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
               30 minutes. No obligation. Walk away with clarity on your goals, your physiology, and your path forward.
             </p>
           </div>
         </div>
 
         {/* Main Form Section */}
-        <div className="px-4 sm:px-6 lg:px-8 pb-16">
+        <div className="px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16">
           <div className="max-w-6xl mx-auto">
             {/* Full Width Form */}
-            <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-b from-white/[0.08] via-white/[0.03] to-transparent p-8 sm:p-10 md:p-12 backdrop-blur-sm mb-12">
+            <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-b from-white/[0.08] via-white/[0.03] to-transparent p-6 sm:p-8 md:p-12 backdrop-blur-sm mb-12">
               <div className="absolute top-0 right-0 w-80 h-80 bg-red-600/15 blur-3xl -z-10"></div>
               <div className="absolute bottom-0 left-0 w-96 h-96 bg-red-600/10 blur-3xl -z-10"></div>
 
-              <div className="relative z-10 mb-8">
-                <p className="uppercase tracking-[4px] text-red-500 text-xs font-semibold mb-4">
+              <div className="relative z-10 mb-6 sm:mb-8">
+                <p className="uppercase tracking-[4px] text-red-500 text-xs font-semibold mb-3">
                   Get Started Now
                 </p>
 
-                <h2 className="text-4xl sm:text-5xl font-black leading-tight mb-6 text-white">
+                <h2 className="text-2xl sm:text-4xl md:text-5xl font-black leading-tight mb-4 sm:mb-6 text-white">
                   Find Your Best Fit Coaching Plan
                 </h2>
 
-                <p className="text-white/70 text-base sm:text-lg leading-relaxed">
+                <p className="hidden sm:block text-white/70 text-base sm:text-lg leading-relaxed">
                   Tell us a little about yourself. We'll use this information to understand how we can best support you on your fitness journey.
                 </p>
               </div>
@@ -1769,7 +1769,7 @@ function ContactPage() {
                   title="Apply for Coaching Form"
                   className="border-none"
                   style={{ 
-                    minHeight: '800px',
+                    minHeight: '600px',
                     width: '90%',
                     maxWidth: '900px',
                     background: 'transparent'
@@ -1780,56 +1780,55 @@ function ContactPage() {
             </div>
 
             {/* Contact Info Below Form */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
               {/* Email Card */}
-              <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.02] p-8 backdrop-blur-sm">
+              <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.02] p-6 sm:p-8 backdrop-blur-sm">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-red-600/10 blur-3xl -z-10"></div>
 
-                <p className="uppercase tracking-[4px] text-red-500 text-xs font-semibold mb-6">
+                <p className="uppercase tracking-[4px] text-red-500 text-xs font-semibold mb-4">
                   Email
                 </p>
 
                 <a 
                   href="mailto:alwaysfitdaniel@gmail.com"
-                  className="text-white/90 text-lg font-bold hover:text-red-400 transition duration-300 break-all block"
+                  className="text-white/90 text-base sm:text-lg font-bold hover:text-red-400 transition duration-300 break-all block"
                 >
                   alwaysfitdaniel@gmail.com
                 </a>
               </div>
 
               {/* Location Card */}
-              <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.02] p-8 backdrop-blur-sm">
+              <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.02] p-6 sm:p-8 backdrop-blur-sm">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-red-600/10 blur-3xl -z-10"></div>
 
-                <p className="uppercase tracking-[4px] text-red-500 text-xs font-semibold mb-6">
+                <p className="uppercase tracking-[4px] text-red-500 text-xs font-semibold mb-4">
                   Studio Location
                 </p>
 
-                <p className="text-white/80 text-base font-medium leading-relaxed">
+                <p className="text-white/80 text-sm sm:text-base font-medium leading-relaxed">
                   Private Studio<br />
                   Chamblee / Brookhaven<br />
-                  <span className="text-white/60">Atlanta, GA Metro Area</span>
+                  <span className="text-white/60">Atlanta, GA</span>
                 </p>
               </div>
 
               {/* Hours Card */}
-              <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.02] p-8 backdrop-blur-sm">
+              <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.02] p-6 sm:p-8 backdrop-blur-sm sm:col-span-2 md:col-span-1">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-red-600/10 blur-3xl -z-10"></div>
 
-                <p className="uppercase tracking-[4px] text-red-500 text-xs font-semibold mb-6">
+                <p className="uppercase tracking-[4px] text-red-500 text-xs font-semibold mb-4">
                   Hours
                 </p>
 
-                <p className="text-white/80 text-base font-medium leading-relaxed">
-                  Mon – Sat<br />
-                  5 AM – 9 PM<br />
+                <p className="text-white/80 text-sm sm:text-base font-medium leading-relaxed">
+                  Mon – Sat: 5 AM – 9 PM<br />
                   <span className="text-white/60">Sun: By appointment</span>
                 </p>
               </div>
             </div>
 
             {/* Info Note */}
-            <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-b from-red-600/5 to-transparent p-6 backdrop-blur-sm mt-8">
+            <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-b from-red-600/5 to-transparent p-6 backdrop-blur-sm mt-6 sm:mt-8">
               <div className="absolute top-0 right-0 w-48 h-48 bg-red-600/10 blur-3xl -z-10"></div>
               
               <div className="relative z-10">

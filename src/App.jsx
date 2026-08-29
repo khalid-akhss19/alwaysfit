@@ -23,7 +23,7 @@ import resultFourteen from './assets/images/IMG_9306.jpg'
 
 const aboutVideo = '/assets/videos/about-video.mov'
 const danielSectionVideo = '/assets/videos/new.mp4'
-const calendlyUrl = 'https://calendly.com/alwaysfit_daniel/alwaysfit'
+const calendlyUrl = 'https://api.leadconnectorhq.com/widget/booking/ItaKe6QwbnYTx5RmFn79'
 const nurseCoachingVideoUrl = 'https://www.youtube.com/embed/ilejNnIAX_U'
 const trainingVideos = [
   {
@@ -1726,27 +1726,29 @@ function ContactPage() {
             <div className="relative z-10">
               <div className="mb-12">
                 <p className="uppercase tracking-[4px] text-red-500 text-xs mb-4">
-                  Free Consultation Form
+                  ALWAYS FIT NURSES
                 </p>
 
                 <h2 className="text-4xl md:text-5xl font-black leading-tight mb-6">
-                  Start Your
+                  Find Your Best
                   <br />
-                  Transformation
+                  Fit Coaching Plan
                 </h2>
 
                 <p className="text-white/65 text-lg leading-relaxed max-w-2xl">
-                  30 minutes. No obligation. Walk away with clarity on your goals, your physiology, and your path forward.
+                  Tell us a little about yourself. We'll use this information to understand how we can best support you.
                 </p>
               </div>
 
               <div className="w-full">
-                <iframe
-                  title="Always Fit - Booking Form"
-                  src="https://api.leadconnectorhq.com/widget/form/ITruCe41VLMfT2koHOVc"
-                  className="w-full h-[800px] rounded-2xl border border-white/10"
-                  loading="lazy"
-                ></iframe>
+                <a
+                  href="https://api.leadconnectorhq.com/widget/form/ITruCe41VLMfT2koHOVc"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block w-full bg-red-600 hover:bg-red-700 transition-all duration-500 py-5 rounded-full text-center text-lg font-semibold shadow-2xl shadow-red-900/40"
+                >
+                  Apply for Coaching
+                </a>
               </div>
             </div>
           </div>
@@ -1799,7 +1801,7 @@ function ContactPage() {
               </div>
             </div>
 
-            <div className="relative overflow-hidden rounded-[36px] border border-white/10 bg-black h-[420px] group">
+            <div className="relative overflow-hidden rounded-[36px] border border-white/10 bg-black h-[420px] group lg:hidden">
               <iframe
                 title="Always Fit Studio Location"
                 src="https://maps.google.com/maps?q=Brookhaven%20Atlanta&t=&z=11&ie=UTF8&iwloc=&output=embed"
